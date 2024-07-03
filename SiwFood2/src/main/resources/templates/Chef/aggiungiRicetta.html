@@ -1,0 +1,204 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuova Ricetta</title>
+        <link rel="stylesheet" href="/stile.css?version=3" />
+    </head>
+    <body>
+        <div>
+            <a href="/chef">
+                <img src="/images/foodLogo.png" width="10%" />
+            </a>
+        </div>
+        <h1>Aggiungi una ricetta</h1>
+        <!-- Il path in action e l'oggetto in object vengono raccolti attraverso la form dal controller 
+        <form th:action="@{/chef/aggiungiRicetta}" method="POST" th:object="${ricetta}" enctype="multipart/form-data">
+            <div>
+                Nome: <input required type="text" th:field="*{nome}"/>
+            </div>
+            <div>
+                Descrizione: <input required type="text" th:field="*{descrizione}"/>
+            </div>
+            <div>
+                <label for="images">Seleziona le immagini:</label>
+                <input type="file" id="images" name="images" >
+            </div>
+            <div>
+                <button type="submit">Conferma</button>
+            </div>
+        </form>
+    </body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Aggiungi ricetta</title>
+     <link rel="stylesheet" href="/css/Chef/modificaRicetta.css" />
+     
+     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+ </head>
+ <body>
+     <nav class="nav">
+         <div class="nav-left">
+             <a href="/"><img src="/images/foodLogo.png" class="logo" /></a>
+             <form th:action="@{/siwfood/cerca}" method="post" class="search-form">
+                 <input class="form-control search-input" th:value="${nome}" name="nome" autocomplete="off" placeholder="Cerca qui le tue ricette, cuochi e ingredienti preferiti..." aria-label="Search">
+                 <button class="btn btn-outline-success search-btn" type="submit">Cerca</button>
+             </form>
+         </div>
+         <div class="nav-right">
+             <a class="nav-link" href="/chef/profilo" th:text="${cuoco.nome} + ' ' + ${cuoco.cognome}"></a>
+             <a class="nav-link" href="/logout">
+                 <button class="btn-logout">Logout</button>
+             </a>
+         </div>
+     
+     </nav>
+ 
+     <section>
+ 
+         <div class="container" style="font-family: 'Montserrat', cursive,sans-serif;">
+             <h2>Dati della ricetta</h2>
+             <form th:action="@{/chef/aggiungiRicetta}" method="POST" th:object="${ricetta}" enctype="multipart/form-data"> 
+                 <div>
+                     <label for="nome">Nome:</label>
+                     <input required type="text" id="nome" name="nome" th:field="*{nome}"/>
+                 </div>
+                 <div>
+                     <label for="descrizione">Descrizione:</label>
+                     <input required type="text" id="descrizione" name="descrizione" th:field="*{descrizione}"/>
+                 </div>
+
+                 <div>
+                     <label for="images">Seleziona le nuove immagini:</label>
+                     <input type="file" id="images" name="images" multiple>
+                 </div>
+
+                 <div>
+                    <label for="ingrediente">Ingredienti:</label>
+                    <ul id="ingredientsList" style="width: 500px;">
+                        <li th:each="ingrediente, iterStat : ${ricetta.ingredienti}">
+                            <input type="text" name="ingredienti[__${iterStat.index}__].nome" th:value="${ingrediente.nome}" />
+                            <input type="text" name="ingredienti[__${iterStat.index}__].quantita" th:value="${ingrediente.quantita}" />
+                            <button type="button" class="rimuovi" onclick="removeIngredient(this)">Rimuovi</button>
+                        </li>
+                    </ul>
+                    <div style="width: 500px; margin-left: 40px;">
+                        <label for="newIngredientName">Nome Ingrediente:</label>
+                        <input type="text" id="newIngredientName" name="newIngredientName" />
+                        <label for="newIngredientQuantity">Quantità:</label>
+                        <input type="text" id="newIngredientQuantity" name="newIngredientQuantity" />
+                        <button type="button" onclick="addIngredient()" style="background-color: #6bbe3f;">Aggiungi</button>
+                    </div>
+                </div>
+
+                <h3>Passaggi</h3>
+                <!-- Container per i passaggi -->
+                <ol id="stepsList" style="width: 500px;">
+                    <li th:each="step, iterStat : ${ricetta.steps}">
+                        <input type="text" name="steps[__${iterStat.index}__]" th:value="${step}" />
+                        <button type="button" class="rimuovi" onclick="removeStep(this)">Rimuovi</button>
+                    </li>
+                </ol>
+                <!-- Input per aggiungere nuovi passaggi -->
+                <div style="width: 500px; margin-left: 40px;">
+                    <label for="newStep">Aggiungi un passaggio:</label>
+                    <input type="text" id="newStep" name="newStep" />
+                    <button type="button" onclick="addStep()" style="background-color: #6bbe3f;">Aggiungi</button>
+                </div>
+
+                 <div>
+                     <button type="submit">Conferma</button>
+                 </div>
+             </form>
+         </div>
+ 
+     </section>
+     <script>
+        // Aggiungi un nuovo ingrediente
+        function addIngredient() {
+            var newIngredientName = document.getElementById('newIngredientName').value;
+            var newIngredientQuantity = document.getElementById('newIngredientQuantity').value;
+            if (newIngredientName.trim() !== '' && newIngredientQuantity.trim() !== '') {
+                var ingredientsList = document.getElementById('ingredientsList');
+
+                var li = document.createElement('li');
+                var index = ingredientsList.getElementsByTagName('li').length;
+
+                var inputName = document.createElement('input');
+                inputName.type = 'text';
+                inputName.name = 'ingredienti[' + index + '].nome';
+                inputName.value = newIngredientName;
+
+                var inputQuantity = document.createElement('input');
+                inputQuantity.type = 'text';
+                inputQuantity.name = 'ingredienti[' + index + '].quantita';
+                inputQuantity.value = newIngredientQuantity;
+
+                var button = document.createElement('button');
+                button.type = 'button';
+                button.textContent = 'Rimuovi';
+                button.className = 'rimuovi';
+                button.onclick = function() {
+                    removeIngredient(this);
+                };
+
+                li.appendChild(inputName);
+                li.appendChild(inputQuantity);
+                li.appendChild(button);
+                ingredientsList.appendChild(li);
+
+                document.getElementById('newIngredientName').value = '';
+                document.getElementById('newIngredientQuantity').value = '';
+            }
+        }
+
+        // Rimuovi un ingrediente
+        function removeIngredient(button) {
+            var li = button.parentNode;
+            li.parentNode.removeChild(li);
+        }
+
+        // Aggiungi un nuovo passaggio
+        function addStep() {
+            var newStep = document.getElementById('newStep').value;
+            if (newStep.trim() !== '') {
+                var stepsList = document.getElementById('stepsList');
+
+                var li = document.createElement('li');
+                var index = stepsList.getElementsByTagName('li').length;
+
+                var input = document.createElement('input');
+                input.type = 'text';
+                input.name = 'steps[' + index + ']';
+                input.value = newStep;
+
+                var button = document.createElement('button');
+                button.type = 'button';
+                button.textContent = 'Rimuovi';
+                button.className = 'rimuovi';
+                button.onclick = function() {
+                    removeStep(this);
+                };
+
+                li.appendChild(input);
+                li.appendChild(button);
+                stepsList.appendChild(li);
+
+                document.getElementById('newStep').value = '';
+            }
+        }
+
+        // Rimuovi un passaggio
+        function removeStep(button) {
+            var li = button.parentNode;
+            li.parentNode.removeChild(li);
+        }
+    </script>
+ 
+     
+ </body>
+ </html>
+ 

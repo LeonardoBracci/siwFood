@@ -1,0 +1,188 @@
+body {
+    font-family: 'Lobster', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* NAV BAR */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .logo {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 500px;
+}
+
+.search-btn {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #205646;
+}
+
+/*HEADER */
+
+.header {
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/*SECTION*/
+.title{
+    font-family: 'Lobster', cursive, sans-serif;
+    align-items: center;
+
+    text-align: center;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    color: #205646;   
+}
+.add-center{
+    display: flex;
+    justify-content: center;
+}
+.text-add-ricetta {
+    display: flex;
+    text-decoration: none;
+    font-family: 'Montserrat', cursive, sans-serif;
+    font-weight: bold;
+    color: #46ae34af;
+    flex-direction: column;
+    align-items: center;
+}
+.no-ricette {
+    display: flex;
+    font-size: 20px;
+    color: black;
+    margin-top: 20px;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.ricette-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ricetta-card {
+    background: linear-gradient(90deg, #46ae34af 0%, #205646 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 250px;
+    text-align: left;
+    position: relative; /* Aggiunto per posizionare i bottoni relativamente */
+}
+
+.ricetta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ricetta-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ricetta-image {
+    width: 100%;
+    height: 200px; /* Altezza dell'immagine */
+    overflow: hidden; /* Nasconde eventuali parti eccedenti */
+}
+
+.ricetta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Si adatta perfettamente al contenitore */
+}
+
+.ricetta-info {
+    padding: 15px;
+}
+
+.ricetta-info h2 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+.btn-logout{
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    width: 80px;
+}
+
+/* BOTTONI */
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-modifica {
+    
+    background-color: #46ae34;
+}
+
+.btn-cancella {
+    background-color: red;
+}

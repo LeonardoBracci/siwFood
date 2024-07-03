@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuochi</title>
+    <link rel="stylesheet" href="/css/cuochi.css" />
+</head>
+<body>
+    <nav class="nav">
+      <a href="/admin"><img src="/images/foodLogo.png" class="logo" /></a>
+      <input type="text" placeholder="Cerca la tua ricetta qui...">
+      <a class="nav-link" href="/logout">Logout</a>
+    </nav>
+
+    <h1>Lista degli admin</h1>
+    <div th:if="${admins.isEmpty()}">Non ci sono admin nel sistema</div>
+    <div class="cuochi-list">
+        <div class="cuoco-card" th:each="admin : ${admins}">
+            <div class="cuoco-info">
+                <a th:href="@{'/admin/admin/'+ ${admin.id}}" 
+                th:text="${admin.nome} + ' ' + ${admin.cognome}"></a>
+            </div>
+            <a th:href="@{'/admin/formModificaCuoco/' + ${cuoco.id}}"
+                th:text="Modifica">
+            </a>
+            <a th:href="@{'/admin/cancellaCuoco/' + ${cuoco.id}}"
+                th:text="Cancella">
+            </a>
+        </div>
+        <a href="/admin/formAggiungiCuoco">Aggiungi cuoco</a>
+    </div>
+    
+</body>
+</html>

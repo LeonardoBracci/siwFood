@@ -1,0 +1,194 @@
+/* NAV BAR */ 
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 3px solid #205646; /* Bordo in basso per separazione */
+    width: 87%; /* Larghezza della barra di navigazione */
+    margin: auto;
+    
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .logo {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 500px;
+}
+
+.search-btn {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #205646;
+}
+
+.btn-logout {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px; /* Aggiunta di padding per un migliore aspetto */
+    border: none; /* Rimuove il bordo */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+}
+
+.btn-logout:hover {
+    background-color: #184d3a; /* Cambia il colore al passaggio del mouse */
+}
+
+/* SECTION */
+.ricetta-section {
+    display: flex;
+    justify-content: center;
+    width: 87%;
+    margin: auto;
+    background-color: #f8f9fa;
+}
+
+.ricetta-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.ricetta-left {
+    flex: 1; /* Occupa lo spazio rimanente */
+}
+
+.ricetta-right {
+    width: 550px; /* Larghezza fissa per la colonna di destra */
+    position: sticky;
+    top: 20px;
+}
+
+.ricetta-title {
+    font-family: 'Lobster', cursive, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ricetta-description {
+    font-family: 'Lobster', cursive, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.ricetta-info{
+    margin-left: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.ingredienti-list li{
+    margin-bottom: 10px;
+}
+
+.ingredienti-list li a {
+    text-decoration: none;
+    color: #205646;
+    font-weight: bold;
+}
+
+.ingredienti-list li a:hover {
+    text-decoration: underline;
+}
+
+.ricetta-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover; 
+}
+
+/* SEZIONE CUOCO */
+.cuoco-details {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.scheda-cuoco{
+    margin-left: 30px;
+}
+
+.cuoco-image {
+    margin-right: 15px;
+}
+
+.cuoco-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cuoco-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cuoco-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.cuoco-info h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #353535;
+}

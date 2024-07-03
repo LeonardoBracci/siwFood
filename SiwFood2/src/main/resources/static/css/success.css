@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.success-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+.success-container h1 {
+    color: #4CAF50;
+}
+.success-container p {
+    margin: 15px 0;
+}
+.success-container a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+.success-container a:hover {
+    text-decoration: underline;
+}

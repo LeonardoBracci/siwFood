@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrazione</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <a href="/"><img src="/images/foodLogo.png" class="logo" /></a>
+        <form th:action="@{/siwfood/cerca}" method="post" class="search-form">
+            <input class="form-control search-input" th:value="${nome}" name="nome" autocomplete="off" placeholder="Cerca qui le tue ricette, cuochi e ingredienti preferiti..." aria-label="Search">
+            <button class="btn btn-outline-success search-btn" type="submit">Cerca</button>
+        </form>
+    </nav>
+    
+    <header>
+        <div class="register-container">
+            <h1>Registrazione</h1>
+            <form th:action="@{/register}" method="POST" th:object="${credentials}" enctype="multipart/form-data">
+                <div class="register-columns">
+                    <div class="credentials">
+                        <h3>Credenziali</h3>
+                        <input type="text" placeholder="Nome utente" required th:field="*{username}">
+                        <input type="password" placeholder="Password" required th:field="*{password}">
+                        <input type="password" name="confirmPassword" placeholder="Conferma Password" required>
+                    </div>
+                    <div th:object="${cuoco}" class="personal-data">
+                        <h3>Dati Personali</h3>
+                        <input type="text" name="nome" placeholder="Nome" required th:field="*{nome}">
+                        <input type="text" name="cognome" placeholder="Cognome" required th:field="*{cognome}">
+                        <input type="date" name="dataDiNascita" placeholder="Data di nascita" required th:field="*{dataDiNascita}">
+                        
+                    </div>
+                </div>
+                <div class="immagine-cuoco">
+                    <label for="immagine">Immagine:</label>
+                    <input type="file" id="immagine" name="immagine" accept="image/*">
+                </div>
+                <button type="submit" class="button-success">Registrati</button>
+            </form>
+            <a href="/login" style="text-decoration: none; color: #205646;">Hai già un account? Accedi</a>
+        </div>
+    </header>
+    
+    
+</body>
+</html>

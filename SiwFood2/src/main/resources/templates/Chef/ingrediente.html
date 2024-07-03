@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ingrediente</title>
+        <link rel="stylesheet" href="/stile.css?version=2" />
+    </head>
+
+    <body>
+        <div><a href="/chef"><img src="/images/foodLogo.png" width="10%"/></a></div>
+
+        <div th:if="${ingrediente}">
+        <h1 th:text="${ingrediente.nome} +' '+ '(' + ${ingrediente.quantita} + ')'">Nome ingrediente e quantita</h1>
+        </div>
+        <div th:unless="${ingrediente}">Non esiste nessun ingrediente</div>
+
+        <ul>
+            <li th:each="ricetta : ${ricette}">
+              <a th:href="@{'/chef/ricetta/'+ ${ricetta.id}}"
+                 th:text="${ricetta.nome}">
+              </a>
+            </li>
+        </ul>
+    </body>
+
+</html>

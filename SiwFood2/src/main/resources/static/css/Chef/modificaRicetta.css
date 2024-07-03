@@ -1,0 +1,203 @@
+body {
+    font-family: 'Lobster', cursive, sans-serif;
+    background-color: white;
+    color: #333;
+}
+/* NAV BAR */
+.nav {
+    display: flex;
+    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi di sinistra e destra */
+    align-items: center;
+    background-color: white;
+    border-bottom: 3px solid #205646; /* Bordo in basso per separazione */
+    width: 87%; /* Larghezza della barra di navigazione */
+    margin: auto;
+}
+
+.nav .logo {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    margin-bottom: 0px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%; /* Larghezza completa del contenitore */
+}
+
+.search-btn {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    max-width: 80px;
+    margin-bottom: 0px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Flex 1 per permettere all'elemento di prendere tutto lo spazio disponibile */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-right .nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #205646;
+}
+
+.btn-logout {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px; /* Aggiunta di padding per un migliore aspetto */
+    border: none; /* Rimuove il bordo */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+}
+
+.btn-logout:hover {
+    background-color: #184d3a; /* Cambia il colore al passaggio del mouse */
+}
+
+/* SECTION */
+.container {
+    width: 84%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Lobster', cursive,sans-serif; 
+    font-size: 30px;
+    margin-top: -10px;
+    color: #205646;
+    margin-bottom: 15px;
+}
+
+form {
+    margin-bottom: 20px;
+    
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="file"],
+form input[type="date"],
+form input[id="biografia"],
+form textarea,
+form button,
+form select{
+    width: calc(100% - 10px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #205646;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #184d3a;
+}
+
+ul {
+    margin-left: -20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #205646;
+    margin-right: 10px;
+}
+
+.current-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.current-images .ricetta-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.current-images form {
+    margin-top: 5px;
+}
+
+.current-images form button {
+    margin-left: 5px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.current-images form button:hover {
+    background-color: #990000;
+}
+
+.add-ingredient {
+    display: block;
+    margin-top: 20px;
+    color: #205646;
+    margin-bottom: 30px;
+}
+

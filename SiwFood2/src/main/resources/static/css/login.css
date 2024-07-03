@@ -1,0 +1,108 @@
+/* NAV BAR */ 
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 3px solid #205646; /* Bordo in basso per separazione */
+    width: 87%; /* Larghezza della barra di navigazione */
+    margin: auto;
+}
+
+.nav .logo {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 500px;
+}
+
+.search-btn {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* LOGIN & REGISTRATION */
+header {
+    background-image: url('/images/login.png');
+    object-fit: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 87%;
+    margin: auto;
+    height: 650px; /* Altezza della finestra del browser */
+    background-color: #f8f9fa; /* Colore di sfondo del header */
+}
+
+.login-container, .register-container {
+    font-family: 'Lobster', sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.login-container h1, .register-container h1 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="date"] {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button,
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Aggiunto spazio tra il pulsante di login e quello di registrazione */
+}
+
+.login-container button:hover,
+.register-container button:hover {
+    background-color: #45a049;
+}
+
+.login-container a,
+.register-container a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #205646;
+}
+
+.button-success {
+    background-color: #205646 !important;
+}

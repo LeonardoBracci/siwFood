@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ingredienti</title>
+    <link rel="stylesheet" href="/stile.css?version=2" />
+  </head>
+
+  <body>
+    <div><a href="/chef"><img src="/images/foodLogo.png" width="10%"/></a></div>
+    <h1>Lista degli ingredienti</h1>
+    <div th:if="${ingredienti.isEmpty()}">Non ci sono ingredienti nel sistema</div>
+    <ul>
+      <li th:each="ingrediente : ${ingredienti}">
+        <a th:href="@{'/chef/ingrediente/'+ ${ingrediente.id}}"
+           th:text="${ingrediente.nome}">
+        </a>
+        
+      </li>
+    </ul>
+  </body>
+</html>

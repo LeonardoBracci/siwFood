@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilo personale</title>
+    <link rel="stylesheet" href="/css/profiloChef.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+</head>
+<body>
+    
+    <nav class="nav">
+        <div class="nav-left">
+            <a href="/"><img src="/images/foodLogo.png" class="logo" /></a>
+            <form th:action="@{/siwfood/cerca}" method="post" class="search-form">
+                <input class="form-control search-input" th:value="${nome}" name="nome" autocomplete="off" placeholder="Cerca qui le tue ricette, cuochi e ingredienti preferiti..." aria-label="Search">
+                <button class="btn btn-outline-success search-btn" type="submit">Cerca</button>
+            </form>
+        </div>
+        
+
+        <div class="nav-right">
+            <a class="nav-link" href="/admin/profilo" th:text="${admin.nome} + ' ' + ${admin.cognome}"></a>
+            <a class="nav-link" href="/logout">
+                <button class="btn-logout">Logout</button>
+            </a>
+        </div>
+    
+    </nav>
+    
+    <section class="edit-chef-section">
+        <div class="edit-chef-container">
+            <div class="content-column">
+                <form th:action="@{/admin/modificaProfilo}" method="POST" th:object="${admin}">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" th:field="*{nome}" required>
+                    </div>
+                    <div>
+                        <label for="cognome">Cognome:</label>
+                        <input type="text" id="cognome" name="cognome" th:field="*{cognome}" required>
+                    </div>
+                    <div>
+                        <label for="dataDiNascita">Data di nascita:</label>
+                        <input type="date" id="dataDiNascita" name="dataDiNascita" th:value="*{dataDiNascita}">
+                    </div>
+                    <button type="submit" class="content-button">Modifica</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

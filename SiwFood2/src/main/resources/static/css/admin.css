@@ -1,0 +1,52 @@
+body {
+    font-family: 'Lobster', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    /*background-color: #ffcc00;*/
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Aggiunto margine per separare i blocchi */
+}
+
+.flex-item {
+    display: flex;
+    justify-content: center;
+    flex-basis: 30%; /* Larghezza delle colonne */
+    background-color: #fff; /* Sfondo bianco per i blocchi */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flex-item h1 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff9800; 
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Effetto transizione al passaggio del mouse */
+}
+button:hover {
+    background-color: #ff7d00; /* Cambio colore al passaggio del mouse */
+}

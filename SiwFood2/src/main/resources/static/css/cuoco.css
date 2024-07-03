@@ -1,0 +1,214 @@
+/* NAV BAR */ 
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 3px solid #205646; /* Bordo in basso per separazione */
+    width: 87%; /* Larghezza della barra di navigazione */
+    margin: auto;
+    
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .logo {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 500px;
+}
+
+.search-btn {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #205646;
+}
+
+/* SECTION */
+.cuoco-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    font-family: 'Lobster', cursive, sans-serif;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+}
+
+.cuoco-details {
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center; /* Cambiato da center a flex-start per l'allineamento verticale */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #46ae34af 0%, #205646 100%);
+}
+
+.cuoco-image {
+    flex: 0 0 200px;
+}
+
+.cuoco-image img {
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.cuoco-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.cuoco-info h1 {
+    margin: 0;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.cuoco-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: wheat;
+}
+
+.cuoco-biografia {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    flex: 1;
+    margin-left: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cuoco-biografia h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.cuoco-biografia p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+}
+
+
+.no-cuoco {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* CAROSELLO RICETTE */
+
+.no-ricette {
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.ricette-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ricetta-card {
+    background: linear-gradient(90deg, #46ae34af 0%, #205646 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 250px;
+    text-align: left;
+}
+
+.ricetta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ricetta-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ricetta-image {
+    width: 100%;
+    height: 200px; /* Altezza dell'immagine */
+    overflow: hidden; /* Nasconde eventuali parti eccedenti */
+}
+
+.ricetta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Si adatta perfettamente al contenitore */
+}
+
+.ricetta-info {
+    padding: 15px;
+}
+
+.ricetta-info h2 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}

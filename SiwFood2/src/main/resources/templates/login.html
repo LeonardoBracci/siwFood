@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav">
+        
+            <a href="/"><img src="/images/foodLogo.png" class="logo" /></a>
+            <form th:action="@{/siwfood/cerca}" method="post" class="search-form">
+                <input class="form-control search-input" th:value="${nome}" name="nome" autocomplete="off" placeholder="Cerca qui le tue ricette, cuochi e ingredienti preferiti..." aria-label="Search">
+                <button class="btn btn-outline-success search-btn" type="submit">Cerca</button>
+            </form>
+        
+    </nav>
+
+    <header>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form th:action="@{/login}" method="POST" th:object="${credentials}">
+                <input type="text" placeholder="Nome utente" th:field="*{username}" required>
+                <input type="password" placeholder="Password" th:field="*{password}" required>
+                <button type="submit" class="button-success">Accedi</button>
+            </form>
+            <a href="/register" style="text-decoration: none; color: #205646;">Non hai un account? Registrati</a>
+        </div>
+        
+    </header>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Nuovo ingrediente</title>
+    <link rel="stylesheet" href="/stile.css?version=3" />
+    </head>
+
+    <body>
+        <div><a href="/chef"><img src="/images/foodLogo.png" width="10%"/></a></div>
+        <h1>Aggiungi un ingrediente </h1>
+        <!--Il path in action e l'oggetto in object vengono raccolti attraverso la form dal controller-->
+        <form th:action="@{'/chef/aggiungiIngrediente/' + ${ricetta.id}}" method="POST" th:object="${ingrediente}"> 
+            <!--I campi dell'oggetto movie vengo no associati in queste operazioni-->
+            <div>
+                Nome: <span><input required type="text" th:field="*{nome}"/></span>
+            </div>
+            <div>
+                Quantita: <span><input required type="text" th:field="*{quantita}"/></span>
+            </div>
+            <!-- <div>
+                URL immagine: <span><input type="url" th:field="*{urlImage}" /></span>
+            </div> -->
+            <div>
+                <span><button type="submit">Conferma</button></span>
+            </div>
+        </form>
+    </body>
+</html>

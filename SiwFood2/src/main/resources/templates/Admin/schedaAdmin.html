@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+        <p><a href="/admin">HOME</a></p>
+        <p><a href="/logout">Logout</a></p>
+        <div class="flex-container"> 
+            <div id="flex-cuochi">
+                <h1>Cuochi</h1>
+                <button href="/admin/cuochi/aggiungi">Aggiungi Cuochi</button>
+                <button href="/admin/cuochi/modifica">Modifica Cuochi</button>
+                <button href="/admin/cuochi/cancella">Cancella Cuochi</button>
+            </div>
+
+            <div id="flex-ricette">
+                <h1>Ricette</h1>
+                <button href="/admin/ricette/aggiungi">Aggiungi Ricette</button>
+                <button href="/admin/ricette/modifica">Modifica Ricette</button>
+                <button href="/admin/ricette/cancella">Cancella Ricette</button>
+            </div>
+
+            <div id="flex-ingredienti">
+                <h1>Ingredienti</h1>
+                <button href="/admin/ingredienti/aggiungi">Aggiungi Ingredienti</button>
+                <button href="/admin/ingredienti/modifica">Modifica Ingredienti</button>
+                <button href="/admin/ingredienti/cancella">Cancella Ingredienti</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+body {
+    font-family: 'Lobster', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV BAR */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .logo {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 500px;
+}
+
+.search-btn {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #205646;
+}
+
+/*HEADER */
+
+.header {
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+/* Titolo della pagina */
+.title{
+    font-family: 'Lobster', cursive, sans-serif;
+    align-items: center;
+
+    text-align: center;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    color: #205646;   
+}
+
+/* Lista dei cuochi */
+.cuochi-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+/* Carta del cuoco */
+.cuoco-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cuoco-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Foto del cuoco */
+.cuoco-photo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cuoco-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the entire area */
+    border: 3px solid #205646;
+}
+
+/* Informazioni del cuoco */
+.cuoco-info a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cuoco-info a:hover {
+    text-decoration: none;
+}
+.modifica-elimina {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 130px;
+}
