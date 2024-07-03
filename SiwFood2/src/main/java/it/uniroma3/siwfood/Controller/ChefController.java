@@ -82,6 +82,7 @@ public class ChefController {
         String username = this.globalController.getUser().getUsername();
         Cuoco cuoco = this.credentialsService.getCredentials(username).getCuoco();
         model.addAttribute("cuoco", cuoco);
+        model.addAttribute("cuochi", this.cuocoService.findAll());
         return "Chef/cuochi.html";
     }
 
