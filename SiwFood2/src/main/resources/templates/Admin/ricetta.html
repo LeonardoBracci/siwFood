@@ -41,32 +41,21 @@
                             <h3>Ingredienti:</h3>
                             <ul>
                                 <li th:each="ingrediente : ${ingredienti}">
-                                    <a th:href="@{'/siwfood/ingrediente/' + ${ingrediente.id}}" 
-                                       th:text="${ingrediente.nome + ' (' + ingrediente.quantita + ')'}"></a>
+                                    <a th:text="${ingrediente.nome + ' (' + ingrediente.quantita + ')'}"></a>
                                 </li>
                             </ul>
                             <div th:if="${#lists.isEmpty(ingredienti)}">
                                 <p>Nessun ingrediente disponibile.</p>
                             </div>
                         </div>
-        
-                        <div class="passi-ricetta" >
-                            <h3>Passi della ricetta:</h3>
-                            <ol th:if="${ricetta.steps != null and not #lists.isEmpty(ricetta.steps)}">
-                                <li th:each="step : ${ricetta.steps}" th:text="${step}"></li>
-                            </ol>
-                            <div th:if="${ricetta.steps == null or #lists.isEmpty(ricetta.steps)}">
-                                <p>Nessun passo disponibile per questa ricetta.</p>
-                            </div>
-                        </div>
                     </div>
-
+        
                     <div class="cuoco-details" style="font-family: 'Montserrat', sans-serif;">
                         <h3>Creata da: </h3>
                         <div th:if="${ricetta.cuoco}" class="scheda-cuoco">
-                            <a th:href="@{'/admin/cuoco/' + ${ricetta.cuoco.id}}" style="text-decoration: none; color: inherit;">
+                            <a th:href="@{'/siwfood/cuoco/' + ${ricetta.cuoco.id}}" style="text-decoration: none; color: inherit;">
                                 <div class="cuoco-image">
-                                    <img th:src="'data:image/;base64,' + ${ricetta.cuoco.base64String}" class="rounded-circle" alt="Immagine Cuoco">
+                                    <img th:src="'data:image/;base64,' + ${ricetta.cuoco.base64}" class="rounded-circle" alt="Immagine Cuoco">
                                 </div>
                                 <div class="cuoco-info">
                                     <h2 th:text="${ricetta.cuoco.nome} + ' ' + ${ricetta.cuoco.cognome}">Nome cuoco</h2>
@@ -75,15 +64,13 @@
                         </div>
                         <div th:unless="${ricetta.cuoco}" class="no-cuoco">Non esiste nessun cuoco</div>
                     </div>
-                    
-                    
                 </div>
         
                 <div class="ricetta-right">
                     <div id="ricettaCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div th:each="immagine, imgStat : ${ricetta.immagini}" th:classappend="${imgStat.index == 0} ? 'carousel-item active' : 'carousel-item'">
-                                <img th:src="'data:image/;base64,' + ${immagine.base64String}" class="d-block w-100" alt="Immagine Ricetta">
+                                <img th:src="'data:image/;base64,' + ${immagine.base64}" class="d-block w-100" alt="Immagine Ricetta">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#ricettaCarousel" data-bs-slide="prev">
@@ -97,6 +84,17 @@
                     </div>
                 </div>
             </div>
+        
+            <div class="passi-ricetta">
+                <h3>Passi della ricetta:</h3>
+                <ol th:if="${ricetta.steps != null and not #lists.isEmpty(ricetta.steps)}">
+                    <li th:each="step : ${ricetta.steps}" th:text="${step}"></li>
+                </ol>
+                <div th:if="${ricetta.steps == null or #lists.isEmpty(ricetta.steps)}">
+                    <p>Nessun passo disponibile per questa ricetta.</p>
+                </div>
+            </div>
+        
             <div th:unless="${ricetta}">Non esiste nessuna ricetta</div>
         </section>
         

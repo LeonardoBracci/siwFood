@@ -28,9 +28,12 @@
                 </form>
             </div>
             <div class="nav-right">
-                <a class="nav-link" href="/login">Login</a>
-                <a class="nav-link" href="/register">Registrati</a>
+                <a class="nav-link" href="/admin/profilo" th:text="${admin.nome} + ' ' + ${admin.cognome}"></a>
+                <a class="nav-link" href="/logout">
+                    <button class="btn-logout">Logout</button>
+                </a>
             </div>
+        
         </nav>
 
         <section class="main-section">
@@ -39,8 +42,8 @@
             </div>
         
             <div class="link-container">
-                <a href="/siwfood/ricette" class="link-box">Tutte le nostre ricette</a>
-                <a href="/siwfood/cuochi" class="link-box">Tutti i nostri cuochi</a>
+                <a href="/admin/ricette" class="link-box">Tutte le nostre ricette</a>
+                <a href="/admin/cuochi" class="link-box">Tutti i nostri cuochi</a>
             </div>
         
             <h2 class="section-title">Risultati della ricerca</h2>
@@ -56,7 +59,7 @@
                             <div th:each="index : ${#numbers.sequence(group, group + 3)}"
                                 th:if="${index lt ricette.size()}" class="col-md-2">
                                 <div th:with="ricetta=${ricette[index]}">
-                                    <a th:href="@{/siwfood/ricetta/{id}(id=${ricetta.id})}" style="text-decoration: none;">
+                                    <a th:href="@{/admin/ricetta/{id}(id=${ricetta.id})}" style="text-decoration: none;">
                                         <div class="d-flex justify-content-around">
                                             <div class="carousel-square">
                                                 <div th:if="${ricetta.immagini != null and !ricetta.immagini.isEmpty()}">
@@ -94,7 +97,7 @@
                             <div th:each="index : ${#numbers.sequence(group, group + 3)}"
                                 th:if="${index lt cuochi.size()}" class="col-md-2">
                                 <div th:with="cuoco=${cuochi[index]}">
-                                    <a th:href="@{/siwfood/cuoco/{id}(id=${cuoco.id})}" style="text-decoration: none;">
+                                    <a th:href="@{/admin/cuoco/{id}(id=${cuoco.id})}" style="text-decoration: none;">
                                         <div class="d-flex justify-content-around">
                                             <div class="carousel-circle">
                                                 <div th:if="${cuoco.base64 != null}">
@@ -119,7 +122,7 @@
                 </button>
             </div>
             <div th:unless="${cuochi!=null and !cuochi.isEmpty()}" class="no-element">Non ci sono cuochi con questo nome</div>
-        </section>
+         </section>
         
     
     

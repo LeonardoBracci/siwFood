@@ -89,7 +89,7 @@
                                                 <div class="carousel-inner">
                                                     <div th:each="immagine, imgStat : ${ricetta.immagini}"
                                                         th:classappend="${imgStat.index == 0} ? 'carousel-item active' : 'carousel-item'">
-                                                        <img th:src="'data:image/;base64,' + ${immagine.base64String}"
+                                                        <img th:src="'data:image/;base64,' + ${immagine.base64}"
                                                             class="d-block w-100" alt="Immagine Ricetta">
                                                     </div>
                                                 </div>
@@ -136,7 +136,7 @@
                                         <div class="d-flex justify-content-around">
                                             <div class="carousel-circle">
                                                 <div th:if="${cuoco.base64 != null}">
-                                                    <img th:src="'data:image/;base64,' + ${cuoco.base64String}" class="rounded-circle" alt="Cuoco Image">
+                                                    <img th:src="'data:image/;base64,' + ${cuoco.base64}" class="rounded-circle" alt="Cuoco Image">
                                                 </div>
                                                 <h5 class="text-center circle-text" th:text="${cuoco.nome} + ' ' + ${cuoco.cognome} ">Cuoco nome</h5>
                                             </div>

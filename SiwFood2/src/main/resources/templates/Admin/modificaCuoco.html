@@ -34,7 +34,7 @@
     <section class="edit-chef-section">
         <div class="edit-chef-container">
             <div class="chef-image">
-                <img th:src="'data:image/jpeg;base64,' + ${cuoco.base64String}" alt="Immagine del cuoco">
+                <img th:src="'data:image/jpeg;base64,' + ${cuoco.base64}" alt="Immagine del cuoco">
             </div>
             <div class="content-column">
                 <form th:action="@{'/admin/modificaCuoco/' + ${cuoco.id}}" method="POST" enctype="multipart/form-data" th:object="${cuoco}">

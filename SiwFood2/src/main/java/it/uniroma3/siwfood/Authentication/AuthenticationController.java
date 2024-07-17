@@ -1,6 +1,7 @@
 package it.uniroma3.siwfood.Authentication;
 
 import java.io.IOException;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -100,7 +101,7 @@ public class AuthenticationController {
             if (!file.isEmpty()) {
                 try {
                     byte[] byteFoto = file.getBytes();
-                    cuoco.setBase64(byteFoto);
+                    cuoco.setBase64(Base64.getEncoder().encodeToString(byteFoto));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

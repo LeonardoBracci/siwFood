@@ -76,9 +76,11 @@
 }
 
 /* SECTION */
+/* SECTION */
 .ricetta-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 87%;
     margin: auto;
     background-color: #f8f9fa;
@@ -89,6 +91,7 @@
     width: 100%;
     max-width: 1200px;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
 .ricetta-left {
@@ -115,13 +118,12 @@
     margin-bottom: 20px;
 }
 
-.ricetta-info{
+.ricetta-info {
     margin-left: 50px;
     font-family: 'Montserrat', sans-serif;
 }
 
-
-.ingredienti-list li{
+.ingredienti-list li {
     margin-bottom: 10px;
 }
 
@@ -141,11 +143,14 @@
     align-items: center;
 }
 
+.carousel {
+    height: 100vh; /* Altezza uguale all'altezza della finestra */
+}
 
 .carousel-item img {
-    width: 100%;
-    height: 550px;
-    object-fit: cover; 
+    height: 100vh; /* Altezza uguale all'altezza della finestra */
+    object-fit: cover; /* Mantiene il rapporto d'aspetto e copre l'intero contenitore */
+    width: 100%; /* Assicura che l'immagine copra l'intera larghezza del contenitore */
 }
 
 /* SEZIONE CUOCO */
@@ -158,6 +163,79 @@
     border-radius: 10px;
     margin-bottom: 20px;
     flex-direction: column;
+}
+
+.scheda-cuoco {
+    margin-left: 30px;
+}
+
+.cuoco-image {
+    margin-right: 15px;
+}
+
+.cuoco-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cuoco-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cuoco-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.cuoco-info h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #353535;
+}
+
+/* Passi della ricetta */
+.passi-ricetta {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.passi-ricetta h3 {
+    font-family: 'Lobster', cursive, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.passi-ricetta ol {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 50px;
+}
+
+.passi-ricetta li {
+    margin-bottom: 10px;
+}
+
+
+/* SEZIONE CUOCO */
+.cuoco-details {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .scheda-cuoco{

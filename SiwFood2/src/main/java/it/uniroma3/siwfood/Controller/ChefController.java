@@ -2,6 +2,7 @@ package it.uniroma3.siwfood.Controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +67,7 @@ public class ChefController {
         if (!file.isEmpty()) {
             try {
                 byte[] byteFoto = file.getBytes();
-                cuocoCorrente.setBase64(byteFoto);
+                cuocoCorrente.setBase64(Base64.getEncoder().encodeToString(byteFoto));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -148,11 +149,13 @@ public class ChefController {
             List<ImmagineRicetta> immagini = new ArrayList<>();
 
             for (MultipartFile file : files) {
-                byte[] byteFoto = file.getBytes();
-                ImmagineRicetta immagine = new ImmagineRicetta();
-                immagine.setBase64(byteFoto);
-                immagine.setRicetta(ricetta);
-                immagini.add(immagine);
+                if(!file.isEmpty()){
+                    byte[] byteFoto = file.getBytes();
+                    ImmagineRicetta immagine = new ImmagineRicetta();
+                    immagine.setBase64(Base64.getEncoder().encodeToString(byteFoto));
+                    immagine.setRicetta(ricetta);
+                    immagini.add(immagine);
+                }
             }
             ricetta.setImmagini(immagini);
             ricettaService.save(ricetta);
@@ -198,7 +201,7 @@ public class ChefController {
                     byte[] byteFoto = file.getBytes();
 
                     ImmagineRicetta immagine = new ImmagineRicetta();
-                    immagine.setBase64(byteFoto); // Usa byte[] invece di String base64
+                    immagine.setBase64(Base64.getEncoder().encodeToString(byteFoto)); 
                     immagine.setRicetta(ricettaCorrente);
                     nuoveImmagini.add(immagine);
                 }

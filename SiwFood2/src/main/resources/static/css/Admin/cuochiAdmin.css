@@ -82,6 +82,14 @@ body {
     color: #205646;
 }
 
+.btn-logout {
+    background-color: #205646;
+    color: #fff;
+    border-radius: 10px;
+    width: 80px;
+}
+
+
 /*HEADER */
 
 .header {

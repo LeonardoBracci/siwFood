@@ -15,7 +15,7 @@
     <nav class="nav">
         <div class="nav-left">
             <a href="/"><img src="/images/foodLogo.png" class="logo" /></a>
-            <form th:action="@{/siwfood/cerca}" method="post" class="search-form">
+            <form th:action="@{/chef/cerca}" method="post" class="search-form">
                 <input class="form-control search-input" th:value="${nome}" name="nome" autocomplete="off" placeholder="Cerca qui le tue ricette, cuochi e ingredienti preferiti..." aria-label="Search">
                 <button class="btn btn-outline-success search-btn" type="submit">Cerca</button>
             </form>
@@ -34,7 +34,7 @@
     <section class="edit-chef-section">
         <div class="edit-chef-container">
             <div class="chef-image">
-                <img th:src="'data:image/jpeg;base64,' + ${cuoco.base64String}" alt="Immagine del cuoco">
+                <img th:src="'data:image/jpeg;base64,' + ${cuoco.base64}" alt="Immagine del cuoco">
             </div>
             <div class="content-column">
                 <form th:action="@{/chef/modificaProfilo}" method="POST" enctype="multipart/form-data" th:object="${cuoco}">

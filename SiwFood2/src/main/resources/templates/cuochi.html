@@ -58,7 +58,7 @@
       <div class="cuochi-list">
           <div class="cuoco-card" th:each="cuoco : ${cuochi}">
               <div class="cuoco-photo">
-                  <img th:src="'data:image/;base64,' + ${cuoco.base64String}" alt="Immagine Cuoco" class="cuoco-immagine" />
+                  <img th:src="'data:image/;base64,' + ${cuoco.base64}" alt="Immagine Cuoco" class="cuoco-immagine" />
               </div>
               <div class="cuoco-info">
                   <a th:href="@{'/siwfood/cuoco/'+ ${cuoco.id}}" 

@@ -20,6 +20,8 @@ public class Ricetta {
     private Long id;
 
     private String nome;
+
+    @Column(length = 10000000)
     private String descrizione;
 
     @Column(length = 10000000)

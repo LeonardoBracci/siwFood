@@ -37,7 +37,17 @@ public class Cuoco {
 
     
 
-    private byte[] base64;
+    @Column(length = 1000000000)
+	private String base64;
+
+	public String getBase64() {
+		return base64;
+	}
+
+	public void setBase64(String base64) {
+		this.base64 = base64;
+	}
+
 
     @OneToOne(mappedBy = "cuoco",cascade = CascadeType.ALL)
     private Credentials credentials;    
@@ -86,21 +96,6 @@ public class Cuoco {
         this.ricette = ricette;
     }
 
-    public byte[] getBase64() {
-            return base64;
-    }
-
-    public void setBase64(byte[] base64) {
-            this.base64 = base64;
-    }
-
-    // Metodo per ottenere la stringa Base64
-    public String base64String() {
-        if (this.base64 != null) {
-            return Base64.getEncoder().encodeToString(this.base64);
-        }
-        return "";
-    }
 
     public Credentials getCredentials() {
         return credentials;

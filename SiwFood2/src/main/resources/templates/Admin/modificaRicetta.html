@@ -46,7 +46,7 @@
     <h2>Immagini attuali</h2>
     <!-- Iterazione sulle immagini della ricetta 
     <div th:each="immagine : ${ricetta.immagini}">
-        <img th:src="'data:image/;base64,' + ${immagine.base64String}" alt="Immagine Ricetta" />
+        <img th:src="'data:image/;base64,' + ${immagine.base64}" alt="Immagine Ricetta" />
         <form th:action="@{'/admin/modificaRicetta/' + ${ricetta.id} + '/eliminaImmagine/' + ${immagine.id}}" method="POST">
             <button type="submit">Elimina</button>
         </form>
@@ -170,7 +170,7 @@
             <h2>Immagini caricate</h2>
             <div class="current-images">
                 <div th:each="immagine : ${ricetta.immagini}">
-                    <img class="ricetta-image" th:src="'data:image/;base64,' + ${immagine.base64String}" alt="Immagine Ricetta" />
+                    <img class="ricetta-image" th:src="'data:image/;base64,' + ${immagine.base64}" alt="Immagine Ricetta" />
                     <form th:action="@{'/admin/modificaRicetta/' + ${ricetta.id} + '/eliminaImmagine/' + ${immagine.id}}" method="POST">
                         <button type="submit">Elimina</button>
                     </form>
